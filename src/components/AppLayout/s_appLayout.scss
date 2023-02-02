@@ -1,0 +1,46 @@
+.layout {
+  &-wrapper {
+    height: 100%;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &-img {
+        width: 80px;
+        animation: logo infinite 20s linear;
+        @media screen and (max-width: 576px){
+          display: none;
+        }
+      }
+      &-title {
+        color: #fff;
+        @media screen and (max-width: 768px){
+          display: none;
+        }
+      }
+    }
+    .menu {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@keyframes logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

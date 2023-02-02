@@ -1,0 +1,55 @@
+.login {
+  &-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(285deg,#dcf1f9, #7ebcd5);;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  &-left,
+  &-right{
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+  &-left{
+    @media screen and (max-width: 992px){
+      max-width: 0px;
+    }
+    align-items: flex-end;    
+  }
+  &-right {
+    align-items: center;
+  }
+  //left
+  &-img {
+    width: 100%;
+  }
+
+  // right
+  &-logo {
+    width: 100px;
+    height: 100px;
+    animation: logo infinite 20s linear;
+  }
+  &-title {
+    font-size: 2em;
+  }
+  &-form {
+    width: 100%;
+    height: 450px;
+    // border: 1px solid gray;
+    padding: 0 16px 0 8px;
+  }
+}
+
+@keyframes logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

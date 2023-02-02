@@ -1,0 +1,71 @@
+$size-list: (
+  xs: 4px,
+  sm: 8px,
+  md: 16px,
+  lg: 24px,
+  xl: 32px,
+  xxl: 40px
+);
+
+.card {
+  box-shadow: 1px 1px 6px 2px #77a0d1;
+}
+
+.c {
+  &-pa-clear {
+    padding: 0 !important;
+  }
+  &-ma-clear{
+    margin: 0 !important;
+  }
+}
+
+@each $size, $value in $size-list {
+  .c-pa-#{$size} {
+    padding: $value !important;
+  }
+  .c-px-#{$size} {
+    padding: 0 $value !important;
+  }
+  .c-py-#{$size} {
+    padding: $value 0 !important;
+  }
+  .c-pt-#{$size} {
+    padding-top: $value !important;
+  }
+  .c-pb-#{$size} {
+    padding-bottom: $value !important;
+  }
+  .c-pl-#{$size} {
+    padding-left: $value !important;
+  }
+  .c-pr-#{$size} {
+    padding-right: $value !important;
+  }
+
+  .c-ma-#{$size} {
+    margin: $value !important;
+  }
+  .c-mx-#{$size} {
+    margin: 0 $value !important;
+  }
+  .c-my-#{$size} {
+    margin: $value 0 !important;
+  }
+  .c-mt-#{$size} {
+    margin-top: $value !important;
+  }
+  .c-mb-#{$size} {
+    margin-bottom: $value !important;
+  }
+  .c-ml-#{$size} {
+    margin-left: $value !important;
+  }
+  .c-mr-#{$size} {
+    margin-right: $value !important;
+  }
+
+  .c-ga-#{$size} {
+    gap: $value !important;
+  }
+}
