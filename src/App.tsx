@@ -3,7 +3,7 @@ import React from 'react'
 // import Login from './pages/Login'
 import View from './components/View'
 import AppLayout from './components/AppLayout'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (

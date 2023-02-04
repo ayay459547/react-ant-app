@@ -49,6 +49,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
               margin: 0,
               minHeight: 280,
               background: colorBgContainer,
+              overflowY: 'auto'
             }}
           >
             {props.children ?? 'Content'}

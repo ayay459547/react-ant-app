@@ -5,10 +5,6 @@ import type { IRouter } from '../router'
 import Loading from './Loading'
 
 export default class View extends Component {
-  constructor (props: any) {
-    super(props)
-  }
-
   getRoute (routes:IRouter[]): ReactNode[] {
     return routes.map(router => {
       const { path, key, component, children = [] } = router

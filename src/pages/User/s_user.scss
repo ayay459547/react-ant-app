@@ -1,0 +1,16 @@
+.user {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &-new {
+    height: fit-content;
+    padding-bottom: 8px;
+  }
+
+  &-table {
+    flex: 1;
+  }
+}

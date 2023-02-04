@@ -1,4 +1,4 @@
-import React, { createRef, RefObject } from 'react'
+import React, { createRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Space, Button, Input, Form, FormInstance, message } from 'antd'
@@ -23,7 +23,12 @@ const Login: React.FC = () => {
 
   const formRef = createRef<FormInstance>()
 
-  const submit = (form: any) => {
+  interface FormType {
+    account: string
+    password: string
+  }
+
+  const submit = (form: FormType) => {
     const { account = '' , password = '' } = form
 
     login(account, password).then(async response => {
@@ -32,7 +37,6 @@ const Login: React.FC = () => {
         await set('token', data.token)
         message.success(msg)
         navigate(`/dashboard`)
-        // window.location.href = '/'
       }
       console.log(response)
     })
@@ -78,11 +82,11 @@ const Login: React.FC = () => {
 
           <Form.Item {...tailLayout}>
             <Space>
-              <Button type="primary" htmlType="submit">
-                登入
-              </Button>
               <Button type="primary" htmlType="reset">
                 清除
+              </Button>
+              <Button type="primary" htmlType="submit">
+                登入
               </Button>
             </Space>
           </Form.Item>
