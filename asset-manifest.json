@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/react-ant-app/static/css/main.94eedfae.css",
+    "main.js": "/react-ant-app/static/js/main.bf2254ab.js",
+    "static/css/682.31d6cfe0.chunk.css": "/react-ant-app/static/css/682.31d6cfe0.chunk.css",
+    "static/js/682.0e85a0ab.chunk.js": "/react-ant-app/static/js/682.0e85a0ab.chunk.js",
+    "static/css/156.76665893.chunk.css": "/react-ant-app/static/css/156.76665893.chunk.css",
+    "static/js/156.8bdef9a8.chunk.js": "/react-ant-app/static/js/156.8bdef9a8.chunk.js",
+    "static/js/354.5b5597cd.chunk.js": "/react-ant-app/static/js/354.5b5597cd.chunk.js",
+    "static/css/414.33e5e9c9.chunk.css": "/react-ant-app/static/css/414.33e5e9c9.chunk.css",
+    "static/js/414.ab9574ae.chunk.js": "/react-ant-app/static/js/414.ab9574ae.chunk.js",
+    "static/js/574.b4c82fde.chunk.js": "/react-ant-app/static/js/574.b4c82fde.chunk.js",
+    "static/js/787.1b755272.chunk.js": "/react-ant-app/static/js/787.1b755272.chunk.js",
+    "static/js/225.7c21979b.chunk.js": "/react-ant-app/static/js/225.7c21979b.chunk.js",
+    "static/js/665.6ef5d666.chunk.js": "/react-ant-app/static/js/665.6ef5d666.chunk.js",
+    "static/js/935.232abaac.chunk.js": "/react-ant-app/static/js/935.232abaac.chunk.js",
+    "static/media/login.svg": "/react-ant-app/static/media/login.92313d094317351adfcc5538eaac891d.svg",
+    "static/media/logo.svg": "/react-ant-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-ant-app/index.html",
+    "main.94eedfae.css.map": "/react-ant-app/static/css/main.94eedfae.css.map",
+    "main.bf2254ab.js.map": "/react-ant-app/static/js/main.bf2254ab.js.map",
+    "682.0e85a0ab.chunk.js.map": "/react-ant-app/static/js/682.0e85a0ab.chunk.js.map",
+    "156.76665893.chunk.css.map": "/react-ant-app/static/css/156.76665893.chunk.css.map",
+    "156.8bdef9a8.chunk.js.map": "/react-ant-app/static/js/156.8bdef9a8.chunk.js.map",
+    "354.5b5597cd.chunk.js.map": "/react-ant-app/static/js/354.5b5597cd.chunk.js.map",
+    "414.33e5e9c9.chunk.css.map": "/react-ant-app/static/css/414.33e5e9c9.chunk.css.map",
+    "414.ab9574ae.chunk.js.map": "/react-ant-app/static/js/414.ab9574ae.chunk.js.map",
+    "574.b4c82fde.chunk.js.map": "/react-ant-app/static/js/574.b4c82fde.chunk.js.map",
+    "787.1b755272.chunk.js.map": "/react-ant-app/static/js/787.1b755272.chunk.js.map",
+    "225.7c21979b.chunk.js.map": "/react-ant-app/static/js/225.7c21979b.chunk.js.map",
+    "665.6ef5d666.chunk.js.map": "/react-ant-app/static/js/665.6ef5d666.chunk.js.map",
+    "935.232abaac.chunk.js.map": "/react-ant-app/static/js/935.232abaac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94eedfae.css",
+    "static/js/main.bf2254ab.js"
+  ]
+}
