@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/548.32c1af74.chunk.js","mappings":"+IAQA,UANyB,WACvB,OACE,yBAAK,SAET,C","sources":["pages/ThreeJS/Test3.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst Test3: React.FC  = () => {\r\n  return (\r\n    <div>test3</div>\r\n  )\r\n}\r\n\r\nexport default Test3"],"names":[],"sourceRoot":""}
