@@ -52,7 +52,7 @@ const LeftSideBar: React.FC<Props> = ({ current, setCurrent, setBreadcrumbList }
     }, '')
     setCurrent(key)
     setBreadcrumbList(pathList)
-    navigate(url)
+    navigate(`/${process.env?.REACT_APP_PROJECT_NAME}${url}`)
   }
 
   return  (

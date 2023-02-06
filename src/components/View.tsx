@@ -4,7 +4,9 @@ import routes from '../router'
 import type { IRouter } from '../router'
 import Loading from './Loading'
 
+const baseUrl = `${process.env?.REACT_APP_PROJECT_NAME}`
 export default class View extends Component {
+
   getRoute (routes:IRouter[]): ReactNode[] {
     return routes.map(router => {
       const { path, key, component, children = [] } = router
@@ -13,7 +15,7 @@ export default class View extends Component {
         return this.getRoute(children).flat()
       } else {
         return <Route 
-          path={path} 
+          path={`/${baseUrl}${path}`}
           key={key} 
           element={component}
         />
@@ -25,7 +27,10 @@ export default class View extends Component {
     return (
       <Suspense fallback={<Loading/>}>
         <Routes>
-          <Route path="/" element={<Navigate to="/dashboard"/>}/>
+          <Route 
+            path={`/${baseUrl}`} 
+            element={<Navigate to={`/${baseUrl}/dashboard`}/>}
+          />
           { this.getRoute(routes) }
         </Routes>
       </Suspense>

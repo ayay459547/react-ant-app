@@ -1,0 +1,6 @@
+import './scss/g_variable.scss'
+import './scss/g_flex.scss'
+import './scss/g_base.scss'
+import './scss/g_tools.scss'
+import './scss/g_grid-system.scss'
+import './scss/g_normalize.scss'

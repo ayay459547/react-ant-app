@@ -42,6 +42,7 @@ const User: React.FC = () => {
         setTableData(()=> [...newValue])
       }
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getDataCount])
 
   const [isCreateOpen, setIsCreateOpen] = useState(false)

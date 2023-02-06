@@ -82,7 +82,7 @@ const Login: React.FC = () => {
 
           <Form.Item {...tailLayout}>
             <Space>
-              <Button type="primary" htmlType="reset">
+              <Button type="default" htmlType="reset">
                 清除
               </Button>
               <Button type="primary" htmlType="submit">

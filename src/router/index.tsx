@@ -12,8 +12,11 @@ import {
 
 const Dashboard = lazy(() => import('../pages/Dashboard'))
 const User = lazy(() => import('../pages/User'))
-const Notice = lazy(() => import('../pages/Notice'))
+const Test1 = lazy(() => import('../pages/ThreeJS/test1'))
+const Test2 = lazy(() => import('../pages/ThreeJS/test2'))
+const Test3 = lazy(() => import('../pages/ThreeJS/test3'))
 
+const Notice = lazy(() => import('../pages/Notice'))
 const Login = lazy(() => import('../pages/Login'))
 const Page404 = lazy(() => import('../pages/Page404'))
 
@@ -59,21 +62,21 @@ const routes: IRouter[] = [
         path: '/threeJS/test1',
         title: '測試1',
         key: 'test1',
-        component: <div>test1</div>,
+        component: <Test1 />,
         exact: true
       },
       {
         path: '/threeJS/test2',
         title: '測試2',
         key: 'test2',
-        component: <div>test2</div>,
+        component: <Test2 />,
         exact: true
       },
       {
         path: '/threeJS/test3',
         title: '測試3',
         key: 'test3',
-        component: <div>test3</div>,
+        component: <Test3 />,
         exact: true
       }
     ]

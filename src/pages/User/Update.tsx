@@ -22,6 +22,7 @@ const tailLayout = {
   wrapperCol: { offset: 16, span: 8 }
 }
 
+
 const Create: React.FC<PropsType> = ({ userId, setTempId, isShow, setIsShow, setGetDataCount }) => {
   const [updateForm] = Form.useForm<FormType>()
 
@@ -31,6 +32,7 @@ const Create: React.FC<PropsType> = ({ userId, setTempId, isShow, setIsShow, set
       const { username, age, email, address } = data as FormType
       updateForm.setFieldsValue({ username, age, email, address })
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId])
 
   const onFinish = async (values: FormType) => {
