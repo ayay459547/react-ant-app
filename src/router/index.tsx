@@ -12,9 +12,9 @@ import {
 
 const Dashboard = lazy(() => import('../pages/Dashboard'))
 const User = lazy(() => import('../pages/User'))
-const Test1 = lazy(() => import('../pages/ThreeJS/test1'))
-const Test2 = lazy(() => import('../pages/ThreeJS/test2'))
-const Test3 = lazy(() => import('../pages/ThreeJS/test3'))
+const Test1 = lazy(() => import('../pages/ThreeJS/Test1'))
+const Test2 = lazy(() => import('../pages/ThreeJS/Test2'))
+const Test3 = lazy(() => import('../pages/ThreeJS/Test3'))
 
 const Notice = lazy(() => import('../pages/Notice'))
 const Login = lazy(() => import('../pages/Login'))
