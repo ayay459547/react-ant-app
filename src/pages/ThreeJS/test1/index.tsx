@@ -2,6 +2,7 @@ import React from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import Ground from './Ground'
+// import Car from './Car'
 
 const CarShow: React.FC = () => {
   return (
@@ -11,6 +12,8 @@ const CarShow: React.FC = () => {
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
 
       <color args={[0, 0, 0]} attach="background" />
+
+      {/* <Car /> */}
 
       <spotLight 
         color={[1, 0.25, 0.7]}
