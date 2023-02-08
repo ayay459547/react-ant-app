@@ -1,0 +1,52 @@
+.todo {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #f0f2f5;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  &-input,
+  &-filter {
+    position: sticky;
+    background-color: inherit;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 8px;
+    z-index: 1;
+  }
+  &-input {
+    top: 0;
+    padding-top: 16px;
+  }
+  &-filter {
+    top: 64px;
+  }
+
+  &-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  &-empty {
+    width: 100%;
+  }
+}
+
+.card {
+  &-container {
+    height: 80px;
+  }
+  &-text {
+    height: 64px;
+  }
+  &-btn {
+    float: right;
+    // background-color: skyblue;
+  }
+}

@@ -4,17 +4,21 @@ import {
   // redirect
 } from 'react-router-dom'
 import { 
-  DashboardOutlined,
+  AppstoreOutlined,
   LoginOutlined, 
+  AuditOutlined,
   NotificationOutlined, 
-  UserOutlined
+  UserOutlined,
+  CodeSandboxOutlined,
 } from '@ant-design/icons'
 
+// left bar
 const Dashboard = lazy(() => import('../pages/Dashboard'))
 const User = lazy(() => import('../pages/User'))
 const Test1 = lazy(() => import('../pages/ThreeJS/Test1'))
 const Test2 = lazy(() => import('../pages/ThreeJS/Test2'))
 const Test3 = lazy(() => import('../pages/ThreeJS/Test3'))
+const TodoList = lazy(() => import('../pages/TodoList'))
 
 const Notice = lazy(() => import('../pages/Notice'))
 const Login = lazy(() => import('../pages/Login'))
@@ -34,16 +38,25 @@ export interface IRouter {
 const routes: IRouter[] = [
   {
     path: '/dashboard',
-    title: '儀錶板',
+    title: 'Dashboard',
     key: 'dashboard',
     component: <Dashboard/>,
     exact: true,
-    icon: React.createElement(DashboardOutlined),
+    icon: React.createElement(AppstoreOutlined),
+    position: 'left'
+  },
+  {
+    path: '/todoList',
+    title: 'TodoList',
+    key: 'todoList',
+    component: <TodoList/>,
+    exact: true,
+    icon: React.createElement(AuditOutlined),
     position: 'left'
   },
   {
     path: '/user',
-    title: '使用者',
+    title: 'User',
     key: 'user',
     component: <User/>,
     exact: true,
@@ -55,26 +68,26 @@ const routes: IRouter[] = [
     title: 'ThreeJS',
     key: 'threeJS',
     exact: true,
-    icon: React.createElement(UserOutlined),
+    icon: React.createElement(CodeSandboxOutlined),
     position: 'left',
     children: [
       {
         path: '/threeJS/test1',
-        title: '測試1',
+        title: 'car',
         key: 'test1',
         component: <Test1 />,
         exact: true
       },
       {
         path: '/threeJS/test2',
-        title: '測試2',
+        title: 'Test2',
         key: 'test2',
         component: <Test2 />,
         exact: true
       },
       {
         path: '/threeJS/test3',
-        title: '測試3',
+        title: 'Test3',
         key: 'test3',
         component: <Test3 />,
         exact: true
@@ -83,7 +96,7 @@ const routes: IRouter[] = [
   },
   {
     path: '/notice',
-    title: '通知',
+    title: 'Notice',
     key: 'notice',
     component: <Notice/>,
     icon: React.createElement(NotificationOutlined),
@@ -91,7 +104,7 @@ const routes: IRouter[] = [
   },
   {
     path: '/login',
-    title: '登入',
+    title: 'Logout',
     key: 'login',
     component: <Login/>,
     icon: React.createElement(LoginOutlined),

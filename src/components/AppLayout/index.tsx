@@ -45,7 +45,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
 
           <Content
             style={{
-              padding: 24,
+              padding: 8,
               margin: 0,
               minHeight: 280,
               background: colorBgContainer,

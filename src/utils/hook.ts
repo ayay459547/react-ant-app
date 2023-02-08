@@ -31,13 +31,31 @@ export const useArray = <T>(value: T[]) => {
     clear() {
       setTempValue([])
     },
-    removeIndex(index: number) {
+    remove(index?: number) {
       const temp = [...tempValue]
-      temp.splice(index, 1)
+
+      if (typeof index === 'number') {
+        temp.splice(index, 1)
+      } else {
+        temp.pop()
+      }
       setTempValue(temp)
     },
-    add(data: T) {
-      setTempValue([...tempValue, data])
+    change(data: T, index: number) {
+      console.log(index)
+      const temp = [...tempValue]
+      temp.splice(index, 1, data)
+      setTempValue(temp)
+    },
+    add(data: T, index?: number) {
+      const temp = [...tempValue]
+
+      if (typeof index === 'number') {
+        temp.splice(index, 0, data)
+      } else {
+        temp.push(data)
+      }
+      setTempValue(temp)
     }
   }
 }

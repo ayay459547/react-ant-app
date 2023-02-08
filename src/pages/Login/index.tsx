@@ -36,7 +36,7 @@ const Login: React.FC = () => {
       if (code === 200) {
         await set('token', data.token)
         message.success(msg)
-        navigate(`/dashboard`)
+        navigate(`/${process.env?.REACT_APP_PROJECT_NAME}/dashboard`)
       }
       console.log(response)
     })
