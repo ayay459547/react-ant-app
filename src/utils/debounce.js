@@ -1,10 +1,10 @@
 /**
- * 防抖函數
+ * 防抖函數 debounce
  * @param {*} callback 回調函數
  * @param {*} delay 延遲
  * @returns 
  */
-export const debounce = (callback, delay) => {
+export default (callback, delay = 0) => {
   // let now = null
   let timeoutId
 
