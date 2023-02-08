@@ -1,0 +1,2 @@
+.todo-container{align-items:center;background-color:#f0f2f5;display:flex;flex-direction:column;gap:16px;height:100%;overflow-y:auto;padding:0 16px}.todo-filter,.todo-input{background-color:inherit;display:flex;justify-content:center;padding:8px;position:-webkit-sticky;position:sticky;width:100%;z-index:1}.todo-input{padding-top:16px;top:0}.todo-filter{top:64px}.todo-list{display:flex;flex-wrap:wrap;gap:8px;width:100%}.todo-empty{width:100%}.card-container{height:80px}.card-text{height:64px}.card-btn{float:right}
+/*# sourceMappingURL=594.8773c906.chunk.css.map*/
