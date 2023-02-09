@@ -1,11 +1,11 @@
 export interface fakeDataType {
   account: string
-  userName: string
+  username: string
   token: string
 }
 
 export const fakeData = {
   account: 'admin',
-  userName: '測試用使用者',
+  username: '測試用使用者',
   token: '@test!admin'
 }

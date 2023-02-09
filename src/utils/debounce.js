@@ -1,31 +1,13 @@
 /**
- * 防抖函數 debounce
+ * 防抖函數
  * @param {*} callback 回調函數
  * @param {*} delay 延遲
  * @returns 
  */
-export default (callback, delay = 0) => {
-  // let now = null
+export const debounce = (callback, delay = 0) => {
   let timeoutId
-
-  // const scopeData = {}
-
-  return new Proxy(() => {}, {
-    // set (obj, key, value) {
-    //   if (scopeData.hasOwnProperty(key)) {
-    //     scopeData[key] = value
-    //     return true
-    //   }
-    // },
-    // get (obj, key) {
-    //   if (scopeData.hasOwnProperty(key)) {
-    //     return scopeData[key]
-    //   }
-    //   return obj[key]
-    // },
-    apply (obj, thisArg, params) {
-      // now = +new Date()
-
+  return new Proxy(function () {}, {
+    apply (_, thisArg, params) {
       if (timeoutId) { clearInterval(timeoutId) }
 
       timeoutId = setTimeout(() => {

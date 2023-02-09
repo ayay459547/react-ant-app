@@ -19,11 +19,10 @@ const Test1 = lazy(() => import('../pages/ThreeJS/Test1'))
 const Test2 = lazy(() => import('../pages/ThreeJS/Test2'))
 const Test3 = lazy(() => import('../pages/ThreeJS/Test3'))
 const TodoList = lazy(() => import('../pages/TodoList'))
-
+// top bar
 const Notice = lazy(() => import('../pages/Notice'))
 const Login = lazy(() => import('../pages/Login'))
 const Page404 = lazy(() => import('../pages/Page404'))
-
 export interface IRouter {
   path: string
   title: string

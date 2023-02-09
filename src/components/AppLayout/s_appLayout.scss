@@ -12,17 +12,26 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
+      @media screen and (max-width: 576px){
+        display: none;
+      }
 
       &-img {
         width: 80px;
         animation: logo infinite 20s linear;
-        @media screen and (max-width: 576px){
-          display: none;
-        }
+        cursor: pointer;
       }
       &-title {
         color: #fff;
+        cursor: pointer;
+        @media screen and (max-width: 768px){
+          display: none;
+        }
+      }
+      &-user {
+        color: #fff;
+        padding: 0 8px;
+        font-size: 1.5em;
         @media screen and (max-width: 768px){
           display: none;
         }
@@ -32,6 +41,9 @@
       flex: 1;
       display: flex;
       justify-content: flex-end;
+      @media screen and (max-width: 576px){
+        justify-content: center;
+      }
     }
   }
 }

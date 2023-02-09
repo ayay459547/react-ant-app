@@ -26,8 +26,8 @@ export const useArray = <T>(value: T[]) => {
   const [tempValue, setTempValue] = useState(value)
 
   return {
-    value: tempValue,
-    setValue: setTempValue,
+    list: tempValue,
+    setList: setTempValue,
     clear() {
       setTempValue([])
     },

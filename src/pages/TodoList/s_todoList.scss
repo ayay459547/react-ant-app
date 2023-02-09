@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: #f0f2f5;
     gap: 16px;
     padding: 0 16px;
@@ -22,6 +22,7 @@
   &-input {
     top: 0;
     padding-top: 16px;
+    flex-wrap: wrap;
   }
   &-filter {
     top: 64px;
@@ -47,6 +48,5 @@
   }
   &-btn {
     float: right;
-    // background-color: skyblue;
   }
 }

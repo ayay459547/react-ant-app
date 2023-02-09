@@ -2,39 +2,45 @@ import React, { useMemo, useState, useEffect } from 'react'
 import { useArray } from '../../utils/hook'
 import './s_todoList.scss'
 import { Card, Input, Button, Space, Empty } from 'antd'
-import { PlusOutlined, EditOutlined, CheckOutlined, DeleteOutlined, ReloadOutlined, ArrowUpOutlined } from '@ant-design/icons'
-
-interface CardDataType {
-  id: number
-  context: string
-  isCompleted: boolean
-  isEdit?: boolean
-}
+import { 
+  PlusOutlined, 
+  EditOutlined, 
+  CheckOutlined, 
+  DeleteOutlined, 
+  ReloadOutlined, 
+  ArrowUpOutlined,
+  SaveOutlined,
+} from '@ant-design/icons'
+import { db } from '../../indexedDB'
+import { useLiveQuery } from 'dexie-react-hooks'
+import { TodoListType } from '../../interface/todoList'
 
 type TextAreaChangeType = (dataIndex: number, value: string) => void
 
-function getData () {
-  return Promise.resolve([])
-}
-
-function getLastId(array: Array<CardDataType>): number {
-  if (array.length === 0) return 0
-  return Math.max(...array.map(item => item?.id ?? 0))
-}
+// function getLastId(array: Array<TodoListType>): number {
+//   if (array.length === 0) return 0
+//   return Math.max(...array.map(item => item?.id ?? 0))
+// }
 
 const TodoList: React.FC = () => {
+  const [ isSet, setIsSet ] = useState(false)
+  const dbList = useLiveQuery(() => db.todoList.toArray())
+
   const [ inputValue, setInputValue ] = useState('')
-
+  
   const [ showStatus, setShowStatus ] = useState('All')
-
-  const { value: list, setValue: setList, add, remove, change } = useArray<CardDataType>([])
+  
+  const { list, setList, add, remove, change } = useArray<TodoListType>([])
 
   useEffect(() => {
-    console.log('init')
-    getData().then(data => {
-      setList(data)
-    })
-  }, [])
+    console.log(dbList)
+    if (typeof dbList === 'object' && !isSet) {
+      console.log('set data')
+      setList(dbList)
+      setIsSet(true)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dbList, isSet])
 
   const undoneList = useMemo(() => {
     return list.filter(item => !item.isCompleted)
@@ -54,19 +60,32 @@ const TodoList: React.FC = () => {
       default:
         return list
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [list, showStatus])
 
   const addData = () => {
-    const newId = getLastId(list) + 1
-    add({
-      id: newId,
+    const newData = {
       isCompleted: false,
       context: inputValue
+    }
+
+    const dbResponse = db.todoList.add(newData)
+    dbResponse.then(newId => {
+      add({
+        ...newData,
+        id: newId
+      })
     })
+    
     setInputValue('')
   }
-  const editData = (dataIndex: number) => {
+  const editData = (dataIndex: number, dataId: number | undefined) => {
     const curr = list[dataIndex]
+    if (curr.isEdit && typeof dataId === 'number') {
+      db.todoList.update(dataId, {
+        context: curr.context
+      })
+    }
     change({
       ...curr,
       isEdit: !curr.isEdit
@@ -79,14 +98,22 @@ const TodoList: React.FC = () => {
       context: value
     }, dataIndex)
   }
-  const checkData = (dataIndex: number) => {
+  const checkData = (dataIndex: number, dataId: number | undefined) => {
     const curr = list[dataIndex]
     change({
       ...curr,
       isCompleted: !curr.isCompleted
     }, dataIndex)
+
+    if (typeof dataId === 'number') {
+      db.todoList.update(dataId, {
+        isCompleted: !curr.isCompleted
+      })
+    }
   }
-  const deleteData = (dataIndex: number) => {
+  const deleteData = (dataIndex: number, dataId: number | undefined) => {
+    if (typeof dataId === 'number') db.todoList.delete(dataId)
+    
     remove(dataIndex)
   }
 
@@ -95,8 +122,12 @@ const TodoList: React.FC = () => {
       <Space className="todo-input">
         <Input
           value={inputValue}
-          size="large" style={{ width: '300px' }}
+          size="large" 
+          style={{ minWidth: '150px' }}
           onChange={(e) => {setInputValue(e.target.value)}}
+          onKeyUp={e => {
+            if (e.key === 'Enter') addData()
+          }}
         />
         <Button 
           type="primary" 
@@ -104,6 +135,14 @@ const TodoList: React.FC = () => {
           icon={<PlusOutlined />}
           onClick={addData}
         />
+        <Button 
+          type="primary" 
+          shape="round" 
+          icon={<SaveOutlined />}
+          onClick={addData}
+        >
+          Save
+        </Button>
       </Space>
 
       <Space className="todo-filter">
@@ -130,7 +169,7 @@ const TodoList: React.FC = () => {
           showList.map((item, itemIndex) => {
             const { id, context, isCompleted, isEdit } = item
             return (<Card key={id}>
-              <Card.Grid style={{ width: '300px', background: isCompleted ? '#cde9cd' : '' }}>
+              <Card.Grid style={{ minWidth: '250px', background: isCompleted ? '#cde9cd' : '' }}>
                 <div style={{ height: '60px' }}>
                 {
                   isEdit ? 
@@ -150,7 +189,7 @@ const TodoList: React.FC = () => {
                       <ArrowUpOutlined style={{color: '#000000e0'}}/>:
                       <EditOutlined style={{color: '#000000e0'}}/>
                     }
-                    onClick={() => editData(itemIndex)}
+                    onClick={() => editData(itemIndex, id)}
                   />
                   <Button 
                     type='text' 
@@ -160,14 +199,14 @@ const TodoList: React.FC = () => {
                       <ReloadOutlined style={{color: '#faad14'}}/>:
                       <CheckOutlined style={{color: '#52c41a'}}/>
                     }
-                    onClick={() => checkData(itemIndex)}
+                    onClick={() => checkData(itemIndex, id)}
                   />
                   <Button 
                     type='text' 
                     shape="circle"
                     size="large"
                     icon={<DeleteOutlined style={{color: '#f56c6c'}}/>}
-                    onClick={() => deleteData(itemIndex)}
+                    onClick={() => deleteData(itemIndex, id)}
                   />
                 </Space>
               </Card.Grid>

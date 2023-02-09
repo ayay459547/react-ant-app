@@ -22,7 +22,7 @@ export const throttle = (callback, delay, options = {}) => {
   
 
   return new Proxy(() => {}, {
-    apply (obj, thisArg, params) {
+    apply (_, thisArg, params) {
       now = +new Date()
 
       // 如果不是第一次執行 && 現在時間 < 上次執行時先 + 延遲時間
