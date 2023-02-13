@@ -8,8 +8,7 @@ import {
   CheckOutlined, 
   DeleteOutlined, 
   ReloadOutlined, 
-  ArrowUpOutlined,
-  SaveOutlined,
+  ArrowUpOutlined
 } from '@ant-design/icons'
 import { db } from '../../indexedDB'
 import { useLiveQuery } from 'dexie-react-hooks'
@@ -33,9 +32,7 @@ const TodoList: React.FC = () => {
   const { list, setList, add, remove, change } = useArray<TodoListType>([])
 
   useEffect(() => {
-    console.log(dbList)
     if (typeof dbList === 'object' && !isSet) {
-      console.log('set data')
       setList(dbList)
       setIsSet(true)
     }
@@ -135,14 +132,6 @@ const TodoList: React.FC = () => {
           icon={<PlusOutlined />}
           onClick={addData}
         />
-        <Button 
-          type="primary" 
-          shape="round" 
-          icon={<SaveOutlined />}
-          onClick={addData}
-        >
-          Save
-        </Button>
       </Space>
 
       <Space className="todo-filter">

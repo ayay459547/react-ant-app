@@ -42,7 +42,6 @@ export const useArray = <T>(value: T[]) => {
       setTempValue(temp)
     },
     change(data: T, index: number) {
-      console.log(index)
       const temp = [...tempValue]
       temp.splice(index, 1, data)
       setTempValue(temp)
@@ -55,6 +54,11 @@ export const useArray = <T>(value: T[]) => {
       } else {
         temp.push(data)
       }
+      setTempValue(temp)
+    },
+    addList(data: T[]) {
+      const temp = [...tempValue]
+      temp.push(...data)
       setTempValue(temp)
     }
   }

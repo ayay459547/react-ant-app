@@ -5,6 +5,7 @@ import type { MenuProps } from 'antd'
 import { Layout, Menu, theme } from 'antd'
 
 import routes from '../../router'
+import { useMount } from '../../utils/hook'
 
 const { Sider } = Layout
 
@@ -37,6 +38,13 @@ interface Props {
 }
 const LeftSideBar: React.FC<Props> = ({ current, setCurrent, setBreadcrumbList }) => {
   const [collapsed, setCollapsed] = useState(false)
+
+  useMount(() =>{
+    if (window.innerWidth < 768) {
+      setCollapsed(true)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  })
 
   const {
     token: { colorBgContainer },
