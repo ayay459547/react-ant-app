@@ -16,11 +16,6 @@ import { TodoListType } from '../../interface/todoList'
 
 type TextAreaChangeType = (dataIndex: number, value: string) => void
 
-// function getLastId(array: Array<TodoListType>): number {
-//   if (array.length === 0) return 0
-//   return Math.max(...array.map(item => item?.id ?? 0))
-// }
-
 const TodoList: React.FC = () => {
   const [ isSet, setIsSet ] = useState(false)
   const dbList = useLiveQuery(() => db.todoList.toArray())

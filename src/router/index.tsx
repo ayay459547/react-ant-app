@@ -15,9 +15,9 @@ import {
 // left bar
 const Dashboard = lazy(() => import('../pages/Dashboard'))
 const User = lazy(() => import('../pages/User'))
-const Test1 = lazy(() => import('../pages/ThreeJS/Test1'))
-const Test2 = lazy(() => import('../pages/ThreeJS/Test2'))
-const Test3 = lazy(() => import('../pages/ThreeJS/Test3'))
+const Test1 = lazy(() => import('../pages/Canvas/Test1'))
+const Test2 = lazy(() => import('../pages/Canvas/Test2'))
+const Test3 = lazy(() => import('../pages/Canvas/Test3'))
 const TodoList = lazy(() => import('../pages/TodoList'))
 // top bar
 const Notice = lazy(() => import('../pages/Notice'))
@@ -63,29 +63,29 @@ const routes: IRouter[] = [
     position: 'left'
   },
   {
-    path: '/threeJS',
-    title: 'ThreeJS',
-    key: 'threeJS',
+    path: '/canvas',
+    title: 'Canvas',
+    key: 'canvas',
     exact: true,
     icon: React.createElement(CodeSandboxOutlined),
     position: 'left',
     children: [
       {
-        path: '/threeJS/test1',
+        path: '/canvas/test1',
         title: 'car',
         key: 'test1',
         component: <Test1 />,
         exact: true
       },
       {
-        path: '/threeJS/test2',
+        path: '/canvas/test2',
         title: 'Test2',
         key: 'test2',
         component: <Test2 />,
         exact: true
       },
       {
-        path: '/threeJS/test3',
+        path: '/canvas/test3',
         title: 'Test3',
         key: 'test3',
         component: <Test3 />,
