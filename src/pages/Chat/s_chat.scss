@@ -1,0 +1,144 @@
+[class$="-list"]{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat {
+  &-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+  }
+
+  &-side {
+    width: 200px;
+    background-color: #002140;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 8px;
+    position: relative;
+    transition-duration: 0.3s;
+
+    &.is-open {
+      margin-left: 0px;
+    }
+    &:not(.is-open) {
+      margin-left: -200px;
+    }
+  }
+  &-main {
+    flex: 1;
+    background-color: #e6f4ff;
+    padding: 8px 16px;
+    position: relative;
+  }
+}
+
+.side {
+  &-collapse {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transition-duration: 0.3s;
+    z-index: 1;
+    
+    &.is-open {
+      transform: translate(50%, -50%);
+    }
+    &:not(.is-open) {
+      transform: translate(80%, -50%);
+    }
+  }
+  &-new {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  &-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &-item {
+    width: 100%;
+    color: #ffffff;
+    font-size: 1.2em;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 8px 4px 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &-button {
+      width: 55px;
+    }
+
+    &.active,
+    &:hover {
+      background-color: #3f83b7;
+    }
+  }
+}
+
+.main {
+  &-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 110px);
+    width: 100%;
+    overflow-y: auto;
+    padding-top: 8px;
+
+    display: flex;
+    flex-direction: column;
+  }
+  &-item {
+    width: 100%;
+    display: flex;
+    padding: 8px 16px;
+    gap: 8px;
+    &:nth-child(even) {
+      background-color: #cae1f4;
+    }
+  }
+  &-icon,
+  &-text {
+    font-size: 1.8em;
+    padding: 8px;
+  }
+  &-empty {
+    width: fit-content;
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    text-align: center;
+  }
+
+  &-submit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px 8px 16px;
+    background-image: linear-gradient(180deg,#35374000,#e6f4ff 50%);
+  }
+  &-wait {
+    align-self: flex-start;
+  }
+}

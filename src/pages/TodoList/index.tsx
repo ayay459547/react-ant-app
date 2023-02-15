@@ -10,9 +10,9 @@ import {
   ReloadOutlined, 
   ArrowUpOutlined
 } from '@ant-design/icons'
+import { TodoListType } from '../../interface/todoList'
 import { db } from '../../indexedDB'
 import { useLiveQuery } from 'dexie-react-hooks'
-import { TodoListType } from '../../interface/todoList'
 
 type TextAreaChangeType = (dataIndex: number, value: string) => void
 

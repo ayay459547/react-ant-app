@@ -10,15 +10,17 @@ import {
   NotificationOutlined, 
   UserOutlined,
   CodeSandboxOutlined,
+  MessageOutlined,
 } from '@ant-design/icons'
 
 // left bar
 const Dashboard = lazy(() => import('../pages/Dashboard'))
+const Chat = lazy(() => import('../pages/Chat'))
+const TodoList = lazy(() => import('../pages/TodoList'))
 const User = lazy(() => import('../pages/User'))
 const Test1 = lazy(() => import('../pages/Canvas/Test1'))
 const Test2 = lazy(() => import('../pages/Canvas/Test2'))
 const Test3 = lazy(() => import('../pages/Canvas/Test3'))
-const TodoList = lazy(() => import('../pages/TodoList'))
 // top bar
 const Notice = lazy(() => import('../pages/Notice'))
 const Login = lazy(() => import('../pages/Login'))
@@ -42,6 +44,15 @@ const routes: IRouter[] = [
     component: <Dashboard/>,
     exact: true,
     icon: React.createElement(AppstoreOutlined),
+    position: 'left'
+  },
+  {
+    path: '/chat',
+    title: 'Chat',
+    key: 'chat',
+    component: <Chat/>,
+    exact: true,
+    icon: React.createElement(MessageOutlined),
     position: 'left'
   },
   {
@@ -72,14 +83,14 @@ const routes: IRouter[] = [
     children: [
       {
         path: '/canvas/test1',
-        title: 'car',
+        title: 'Clock',
         key: 'test1',
         component: <Test1 />,
         exact: true
       },
       {
         path: '/canvas/test2',
-        title: 'Test2',
+        title: 'Moon',
         key: 'test2',
         component: <Test2 />,
         exact: true

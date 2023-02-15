@@ -134,7 +134,7 @@ const Dashboard: React.FC = () => {
 
   const [width, setWidth] = useState(768)
   const [height, setHeight] = useState(768)
-  const radius = 5
+  const [radius, setRadius] = useState(5)
   const top = 10
   const left = 10
   const g = 2
@@ -170,8 +170,23 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     if (containerRef !== null) {
       const container = containerRef.current
-      setWidth(Math.max(768, container?.offsetWidth ?? 0))
+      const tempWidth = container?.offsetWidth ?? 0
+      setWidth(Math.max(768, tempWidth))
       setHeight(Math.max(300, container?.offsetHeight ?? 0))
+
+      if (tempWidth > 1400) {
+        setRadius(10)
+      } else if (tempWidth > 1200) {
+        setRadius(8)
+      } else if (tempWidth > 992){
+        setRadius(7)
+      } else if (tempWidth > 768){
+        setRadius(6)
+      } else if (tempWidth > 576){
+        setRadius(5)
+      } else {
+        setRadius(4)
+      }
     }
     // 取得時間秒數
     const tempSeconds = getCurrentSeconds()
