@@ -10,16 +10,11 @@ import {
   ReloadOutlined, 
   ArrowUpOutlined
 } from '@ant-design/icons'
+import { TodoListType } from '../../interface/todoList'
 import { db } from '../../indexedDB'
 import { useLiveQuery } from 'dexie-react-hooks'
-import { TodoListType } from '../../interface/todoList'
 
 type TextAreaChangeType = (dataIndex: number, value: string) => void
-
-// function getLastId(array: Array<TodoListType>): number {
-//   if (array.length === 0) return 0
-//   return Math.max(...array.map(item => item?.id ?? 0))
-// }
 
 const TodoList: React.FC = () => {
   const [ isSet, setIsSet ] = useState(false)

@@ -10,15 +10,17 @@ import {
   NotificationOutlined, 
   UserOutlined,
   CodeSandboxOutlined,
+  MessageOutlined,
 } from '@ant-design/icons'
 
 // left bar
 const Dashboard = lazy(() => import('../pages/Dashboard'))
-const User = lazy(() => import('../pages/User'))
-const Test1 = lazy(() => import('../pages/ThreeJS/Test1'))
-const Test2 = lazy(() => import('../pages/ThreeJS/Test2'))
-const Test3 = lazy(() => import('../pages/ThreeJS/Test3'))
+const Chat = lazy(() => import('../pages/Chat'))
 const TodoList = lazy(() => import('../pages/TodoList'))
+const User = lazy(() => import('../pages/User'))
+const Test1 = lazy(() => import('../pages/Canvas/Test1'))
+const Test2 = lazy(() => import('../pages/Canvas/Test2'))
+const Test3 = lazy(() => import('../pages/Canvas/Test3'))
 // top bar
 const Notice = lazy(() => import('../pages/Notice'))
 const Login = lazy(() => import('../pages/Login'))
@@ -45,6 +47,15 @@ const routes: IRouter[] = [
     position: 'left'
   },
   {
+    path: '/chat',
+    title: 'Chat',
+    key: 'chat',
+    component: <Chat/>,
+    exact: true,
+    icon: React.createElement(MessageOutlined),
+    position: 'left'
+  },
+  {
     path: '/todoList',
     title: 'TodoList',
     key: 'todoList',
@@ -63,29 +74,29 @@ const routes: IRouter[] = [
     position: 'left'
   },
   {
-    path: '/threeJS',
-    title: 'ThreeJS',
-    key: 'threeJS',
+    path: '/canvas',
+    title: 'Canvas',
+    key: 'canvas',
     exact: true,
     icon: React.createElement(CodeSandboxOutlined),
     position: 'left',
     children: [
       {
-        path: '/threeJS/test1',
-        title: 'car',
+        path: '/canvas/test1',
+        title: 'Clock',
         key: 'test1',
         component: <Test1 />,
         exact: true
       },
       {
-        path: '/threeJS/test2',
-        title: 'Test2',
+        path: '/canvas/test2',
+        title: 'Moon',
         key: 'test2',
         component: <Test2 />,
         exact: true
       },
       {
-        path: '/threeJS/test3',
+        path: '/canvas/test3',
         title: 'Test3',
         key: 'test3',
         component: <Test3 />,
