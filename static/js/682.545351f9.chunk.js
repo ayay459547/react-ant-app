@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_ant_app=self.webpackChunkreact_ant_app||[]).push([[682],{6682:function(a,n,e){e.r(n),e.d(n,{default:function(){return t}});e(2791);var r=e(184),t=function(){return(0,r.jsx)("div",{className:"dashboard-container",children:"Dashboard"})}}}]);
-//# sourceMappingURL=682.545351f9.chunk.js.map
