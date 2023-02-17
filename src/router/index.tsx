@@ -9,8 +9,8 @@ import {
   AuditOutlined,
   NotificationOutlined, 
   UserOutlined,
-  CodeSandboxOutlined,
   MessageOutlined,
+  FormatPainterOutlined,
 } from '@ant-design/icons'
 
 // left bar
@@ -78,7 +78,7 @@ const routes: IRouter[] = [
     title: 'Canvas',
     key: 'canvas',
     exact: true,
-    icon: React.createElement(CodeSandboxOutlined),
+    icon: React.createElement(FormatPainterOutlined),
     position: 'left',
     children: [
       {
@@ -94,14 +94,14 @@ const routes: IRouter[] = [
         key: 'test2',
         component: <Test2 />,
         exact: true
-      },
-      {
-        path: '/canvas/test3',
-        title: 'Test3',
-        key: 'test3',
-        component: <Test3 />,
-        exact: true
       }
+      // {
+      //   path: '/canvas/test3',
+      //   title: 'Test3',
+      //   key: 'test3',
+      //   component: <Test3 />,
+      //   exact: true
+      // }
     ]
   },
   {

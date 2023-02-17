@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
+import { AuthContext } from "../context/AuthContext"
 
 export const useMount = (callback: () => void = () => {}) => {
   const [mounted, setMounted] = useState(false)
@@ -61,5 +62,14 @@ export const useArray = <T>(value: T[]) => {
       temp.push(...data)
       setTempValue(temp)
     }
+  }
+}
+
+export const useAuth = () => {
+  const context = useContext(AuthContext)
+  if (context) {
+    return context
+  } else {
+    throw new Error('使用 useAuth 需在 AuthProvider 中')
   }
 }

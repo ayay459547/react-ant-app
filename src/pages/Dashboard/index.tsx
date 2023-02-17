@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className='dashboard-container grid-row'>
       <div className='grid-col-lg-12 grid-col-xs-24'>
-        <Card title="其他練習作品">
+        <Card title="練習作品">
           <Timeline
             className='dashboard-timeline'
             items={[
@@ -63,7 +63,7 @@ const Dashboard: React.FC = () => {
         </Card>
       </div>
       <div className='grid-col-lg-12 grid-col-xs-24'>
-        <Card title="其他作品快照">
+        <Card title="作品圖">
           <Carousel autoplay className='dashboard-carousel-list'>
             <div className='dashboard-carousel-item'>
               <img src={web1Img} alt="web1" />
