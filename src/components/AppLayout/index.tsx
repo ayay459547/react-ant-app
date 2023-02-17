@@ -14,8 +14,8 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
     token: { colorBgContainer },
   } = theme.useToken()
 
-  const [current, setCurrent] = useState('dashboard')
-  const [breadcrumbList, setBreadcrumbList] = useState(['dashboard'])
+  const [current, setCurrent] = useState('')
+  const [breadcrumbList, setBreadcrumbList] = useState(['---'])
 
   return (
     <Layout className='layout-wrapper'>

@@ -3,12 +3,15 @@ import React, { useEffect } from 'react'
 // import Login from './pages/Login'
 import View from './components/View'
 import AppLayout from './components/AppLayout'
-import { BrowserRouter } from 'react-router-dom'
+import { 
+  // BrowserRouter,
+  HashRouter 
+} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setUser } from './store/modules/user'
 import { getUser } from './api'
 
-function App() {
+const App: React.FC = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,11 +25,11 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter>
+      <HashRouter>
         <AppLayout>
           <View></View>
         </AppLayout>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }

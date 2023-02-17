@@ -24,6 +24,7 @@ const EditList: React.FC<PropsType> = (props) => {
 
   useEffect(() => {
     editForm.setFieldsValue({ title: inputValue })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue, isShow])
 
   const onFinish = (values: FormType) => {
@@ -38,16 +39,12 @@ const EditList: React.FC<PropsType> = (props) => {
     console.log('Failed:', errorInfo)
   }
 
-  const handleCancel = () => {
-    resetTemp()
-  }
-
   return  (
     <Modal 
       forceRender
       title="編輯Title" 
       open={isShow}
-      onCancel={handleCancel}
+      onCancel={resetTemp}
       footer={[]}
     >
       <Form

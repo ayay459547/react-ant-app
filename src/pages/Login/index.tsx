@@ -1,15 +1,12 @@
 import React, { createRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-import { Space, Button, Input, Form, FormInstance, message } from 'antd'
-import { login } from '../../api/login'
-import { responseType } from '../../utils/request'
-import { set } from '../../utils/storage'
-
+import { Space, Button, Input, Form, FormInstance } from 'antd'
+import { AuthForm } from '../../interface/auth'
 import './s_login.scss'
 import LogoSvg from '../../assets/logo.svg'
 import LoginSvg from '../../assets/login.svg'
-
+import { useAuth } from '../../utils/hook'
+ 
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 }
@@ -20,26 +17,13 @@ const tailLayout = {
 
 const Login: React.FC = () => {
   const navigate = useNavigate()
-
   const formRef = createRef<FormInstance>()
+  const { login } = useAuth()
 
-  interface FormType {
-    account: string
-    password: string
-  }
-
-  const submit = (form: FormType) => {
+  const submit = (form: AuthForm) => {
     const { account = '' , password = '' } = form
-
-    login(account, password).then(async response => {
-      const { code, msg, data } = (response as responseType)
-      if (code === 200) {
-        await set('token', data.token)
-        message.success(msg)
-        navigate(`/${process.env?.REACT_APP_PROJECT_NAME}/dashboard`)
-      }
-      console.log(response)
-    })
+    login(account, password)
+    navigate(`/${process.env?.REACT_APP_PROJECT_NAME}/dashboard`)
   }
 
   return (
