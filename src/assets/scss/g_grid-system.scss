@@ -11,17 +11,17 @@ $gird-gap: 16px;
 
 .grid-row {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(24, 1fr);
   grid-gap: $gird-gap;
 
   & > * {
-    grid-column-start: span 12;
+    grid-column-start: span 24;
   }
 }
 
 @each $size, $value in $grid-breakpoints {
   @media (min-width: $value) {
-    @for $i from 1 through 12 {
+    @for $i from 1 through 24 {
       .grid-col-#{$size}-#{$i} {
         grid-column-start: span $i
       }

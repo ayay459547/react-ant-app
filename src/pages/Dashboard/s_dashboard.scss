@@ -9,4 +9,49 @@
     top: 0;
     left: 0;
   }
+  &-timeline {
+    height: 250px;
+  }
+
+  &-carousel {
+    &-list {
+      position: relative;
+      &::after {
+        display: block;
+        content: '';
+        clear: both;
+        background-color: #ebebeb57;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-item {
+      height: 250px;
+      color: #fff;
+      line-height: 250px;
+      text-align: center;
+      background: #364d79;
+
+      img {
+        width: 90%;
+        margin: 8px auto;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-line {
+    &-container {
+      width: 100%;
+      height: 250px;
+    }
+  }
+
+  .pie-text {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
 }

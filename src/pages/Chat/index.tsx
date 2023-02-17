@@ -83,6 +83,7 @@ const Chat: React.FC = () => {
 
   useEffect(() => {
     scrollToBottom()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chatItem])
   
   return (
