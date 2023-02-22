@@ -8,7 +8,6 @@ import {
   Legend,
   Bar,
 } from 'recharts'
-import { getHtml } from '../../api/dashboard/pie'
 
 const data = [
   {
@@ -51,10 +50,6 @@ const DemoBar: React.FC = ( ) => {
   const chartRef = useRef<HTMLDivElement>(null)
   const [chartWidth, setChartWidth] = useState(700)
   const [chartHeight, setChartHeight] = useState(250)
-
-  useEffect(() => {
-    getHtml()
-  }, [])
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {

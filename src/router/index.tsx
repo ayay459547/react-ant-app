@@ -20,7 +20,7 @@ const TodoList = lazy(() => import('../pages/TodoList'))
 const User = lazy(() => import('../pages/User'))
 const Test1 = lazy(() => import('../pages/Canvas/Test1'))
 const Test2 = lazy(() => import('../pages/Canvas/Test2'))
-const Test3 = lazy(() => import('../pages/Canvas/Test3'))
+// const Test3 = lazy(() => import('../pages/Canvas/Test3'))
 // top bar
 const Notice = lazy(() => import('../pages/Notice'))
 const Login = lazy(() => import('../pages/Login'))

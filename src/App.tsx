@@ -4,8 +4,8 @@ import React, { useEffect } from 'react'
 import View from './components/View'
 import AppLayout from './components/AppLayout'
 import { 
-  // BrowserRouter,
-  HashRouter 
+  BrowserRouter,
+  // HashRouter 
 } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setUser } from './store/modules/user'
@@ -25,11 +25,11 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <HashRouter>
+      <BrowserRouter>
         <AppLayout>
           <View></View>
         </AppLayout>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   )
 }
